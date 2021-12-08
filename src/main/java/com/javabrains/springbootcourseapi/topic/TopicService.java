@@ -10,8 +10,8 @@ import java.util.List;
 public class TopicService {
     private List<Topic> topics = new ArrayList<>(Arrays.asList(
             new Topic("spring", "Spring Framework", "Spring Framework Description"),
-            new Topic("java", "Java Framework", "Java Framework Description"),
-            new Topic("javascript", "JavaScript Framework", "JavaScript Framework Description")
+            new Topic("java", "Java", "Java Description"),
+            new Topic("javascript", "JavaScript", "JavaScript Description")
     ));
 
     public List<Topic> getAllTopics() {
@@ -34,5 +34,9 @@ public class TopicService {
                 return;
             }
         }
+    }
+
+    public void deleteTopic(String id) {
+        topics.removeIf(t -> t.getId().equals(id));
     }
 }
